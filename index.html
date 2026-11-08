@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explora el bazar del Gremio Aurora y equípate para tu próxima aventura."
+    />
+    <title>Gremio Aurora — Bazar de exploradores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Gremio Aurora, inicio">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>GREMIO <b>AURORA</b></span>
+      </a>
+      <nav class="header-links" aria-label="Navegación principal">
+        <a href="#catalogo">Bazar</a>
+        <a href="#gremio">El gremio</a>
+      </nav>
+      <button class="cart-button" id="open-cart" type="button" aria-haspopup="dialog">
+        <span class="bag-icon" aria-hidden="true">▣</span>
+        <span>Bolsa</span>
+        <span class="cart-count" id="cart-count" aria-label="0 artículos">0</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span aria-hidden="true">✦</span> Bazar del Gremio Aurora</p>
+          <h1 id="hero-title">¡La próxima<br />aventura te espera!</h1>
+          <p class="hero-description">
+            Bayas, herramientas y tesoros para exploradores con ganas de descubrir
+            qué hay al otro lado de la mazmorra.
+          </p>
+          <a class="button button-gold" href="#catalogo">
+            VER OBJETOS <span aria-hidden="true">▸</span>
+          </a>
+          <div class="hero-note">
+            <span class="note-stars" aria-hidden="true">✦ ✦ ✦</span>
+            <span>Prepara tu bolsa. ¡Salimos al amanecer!</span>
+          </div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Paisaje pixel art de una mazmorra al atardecer">
+          <div class="pixel-sun"></div>
+          <div class="hero-cloud cloud-one"></div>
+          <div class="hero-cloud cloud-two"></div>
+          <div class="mountain mountain-back"></div>
+          <div class="mountain mountain-front"></div>
+          <div class="hero-platform">
+            <span class="hero-crystal crystal-one"></span>
+            <span class="hero-crystal crystal-two"></span>
+            <span class="hero-crystal crystal-three"></span>
+          </div>
+          <div class="hero-sign">¡RUMBO A LA<br />MAZMORRA!</div>
+          <span class="hero-sparkle sparkle-one" aria-hidden="true">✦</span>
+          <span class="hero-sparkle sparkle-two" aria-hidden="true">✧</span>
+        </div>
+      </section>
+
+      <section class="guild-strip" aria-label="Características de la tienda">
+        <span>✦ EQUIPO DE EXPLORADOR</span>
+        <span>✦ BAYAS Y SUMINISTROS</span>
+        <span>✦ TESOROS DE MAZMORRA</span>
+      </section>
+
+      <section class="catalog-section" id="catalogo" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span aria-hidden="true">▸</span> Mostrador de objetos</p>
+            <h2 id="catalog-title">Prepara tu próxima misión</h2>
+          </div>
+          <p class="catalog-intro">Todo lo que tu equipo necesita antes de adentrarse en la mazmorra.</p>
+        </div>
+
+        <div class="catalog-controls">
+          <div class="category-list" id="category-list" aria-label="Filtrar por categoría"></div>
+          <div class="control-tools">
+            <label class="search-box">
+              <span class="visually-hidden">Buscar objetos</span>
+              <span aria-hidden="true">⌕</span>
+              <input id="search-input" type="search" placeholder="Buscar objeto..." autocomplete="off" />
+            </label>
+            <label class="sort-box">
+              <span class="visually-hidden">Ordenar objetos</span>
+              <select id="sort-select">
+                <option value="featured">Destacados</option>
+                <option value="price-asc">Precio: menor a mayor</option>
+                <option value="price-desc">Precio: mayor a menor</option>
+                <option value="name-asc">Nombre: A–Z</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <p class="results-count" id="results-count" aria-live="polite"></p>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span aria-hidden="true">…</span>
+          <h3>No encontramos ese objeto</h3>
+          <p>Prueba otra búsqueda o mira en una categoría distinta.</p>
+          <button class="text-button" id="reset-filters" type="button">Ver todo el bazar</button>
+        </div>
+        <p class="load-error" id="load-error" role="alert" hidden>
+          No hemos podido cargar el bazar. Comprueba tu conexión e inténtalo de nuevo.
+        </p>
+      </section>
+
+      <section class="values-banner" id="gremio">
+        <span class="values-icon" aria-hidden="true">✦</span>
+        <div>
+          <p class="eyebrow">Juntos somos más fuertes</p>
+          <h2>Un equipo, mil aventuras.</h2>
+        </div>
+        <p>¡Forma tu equipo y descubre lo que esconde cada mazmorra!</p>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#" aria-label="Gremio Aurora, inicio">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>GREMIO <b>AURORA</b></span>
+      </a>
+      <a href="#catalogo">Volver al bazar ↑</a>
+    </footer>
+
+    <div class="modal-backdrop" id="cart-backdrop" hidden>
+      <section
+        class="cart-panel"
+        id="cart-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cart-title"
+        tabindex="-1"
+      >
+        <div class="cart-header">
+          <div>
+            <p class="eyebrow">Inventario de equipo</p>
+            <h2 id="cart-title">Tu bolsa <span id="cart-title-count"></span></h2>
+          </div>
+          <button class="close-button" id="close-cart" type="button" aria-label="Cerrar bolsa">×</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-empty" id="cart-empty">
+          <span aria-hidden="true">▣</span>
+          <h3>Tu bolsa está vacía</h3>
+          <p>¡Visita el bazar y prepara tu equipo para la misión!</p>
+          <button class="button button-gold" id="continue-shopping" type="button">Volver al bazar</button>
+        </div>
+        <div class="cart-summary" id="cart-summary">
+          <div class="summary-line"><span>Total de objetos</span><strong id="cart-subtotal">0,00 €</strong></div>
+          <button class="button button-gold checkout-button" id="checkout-button" type="button">
+            CONFIRMAR EQUIPO <span aria-hidden="true">▸</span>
+          </button>
+          <button class="text-button continue-link" id="continue-shopping-link" type="button">Seguir explorando</button>
+        </div>
+      </section>
+    </div>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
