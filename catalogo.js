@@ -66,7 +66,16 @@ function createProductCard(product) {
     width: 40,
     height: 40,
   });
-  image.append(sprite);
+  const spriteFallback = document.createElement("span");
+  spriteFallback.className = "sprite-fallback";
+  spriteFallback.textContent = "✦";
+  spriteFallback.setAttribute("aria-hidden", "true");
+  spriteFallback.hidden = true;
+  sprite.addEventListener("error", () => {
+    sprite.hidden = true;
+    spriteFallback.hidden = false;
+  }, { once: true });
+  image.append(sprite, spriteFallback);
 
   if (product.tag) {
     const tag = document.createElement("span");

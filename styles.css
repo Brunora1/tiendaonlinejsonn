@@ -76,6 +76,8 @@ h1 { margin-bottom: 21px; color: var(--navy); font-size: clamp(24px, 3.2vw, 39px
 .product-art-sky { background-color: #d1e6ed; background-image: radial-gradient(#a6d0dc 1px, transparent 1px); background-size: 9px 9px; }
 .pixel-sprite { position: relative; z-index: 1; width: 112px; height: 112px; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(4px 5px 0 rgba(35, 49, 71, 0.17)); transition: transform 160ms ease; }
 .product-card:hover .pixel-sprite { transform: translateY(-4px) scale(1.05); }
+.sprite-fallback { position: relative; z-index: 1; display: grid; width: 60px; height: 60px; place-items: center; color: #a56a39; font-size: 34px; text-shadow: 3px 3px 0 rgba(35, 49, 71, 0.15); }
+.cart-item-art .sprite-fallback { width: 38px; height: 38px; font-size: 23px; }
 .product-tag { position: absolute; z-index: 2; top: 8px; left: 8px; padding: 6px 7px; border: 2px solid rgba(35, 49, 71, 0.18); background: var(--paper); color: #5c5b51; font-size: 8px; }
 .product-details { display: flex; justify-content: space-between; gap: 9px; padding: 12px 3px 4px; }
 .product-copy { min-width: 0; }

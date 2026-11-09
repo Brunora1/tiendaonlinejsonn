@@ -57,7 +57,16 @@ function createCartItem(cartItem, showToast) {
   art.className = `cart-item-art product-art-${product.color || "clay"}`;
   const sprite = document.createElement("img");
   Object.assign(sprite, { src: product.sprite, alt: "", width: 40, height: 40 });
-  art.append(sprite);
+  const spriteFallback = document.createElement("span");
+  spriteFallback.className = "sprite-fallback";
+  spriteFallback.textContent = "✦";
+  spriteFallback.setAttribute("aria-hidden", "true");
+  spriteFallback.hidden = true;
+  sprite.addEventListener("error", () => {
+    sprite.hidden = true;
+    spriteFallback.hidden = false;
+  }, { once: true });
+  art.append(sprite, spriteFallback);
 
   const info = document.createElement("div");
   info.className = "cart-item-info";
